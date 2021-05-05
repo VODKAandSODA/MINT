@@ -16,6 +16,10 @@ services:
     networks:
       - default
 
+  volumes:
+    - ./application.yml:/var/MINT/eventeum/core/src/main/resources/application.yml
+
+
   mongodb:
     image: mongo:latest
     ports:

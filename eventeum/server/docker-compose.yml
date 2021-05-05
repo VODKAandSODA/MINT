@@ -3,9 +3,7 @@ version: '3'
 services:
   eventeum:
     image: eventeum/eventeum:latest
-    volumes:
-    - ./application.yml:/var/MINT/eventeum/core/src/main/resources/application.yml
-    ports:
+     ports:
     - "8060:8060"
     depends_on:
       - mongodb

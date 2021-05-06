@@ -4,7 +4,7 @@ services:
   eventeum:
     image: eventeum/eventeum:latest
     volumes:
-       - ./application.yml:/var/eventeum/core/src/main/resources/application.yml
+       - ./application.yml:/var/MINT/eventeum/core/src/main/resources/application.yml
     ports:
     - "8060:8060"
     depends_on:

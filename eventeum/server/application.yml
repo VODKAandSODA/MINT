@@ -70,13 +70,13 @@ eventStore:
   type: DB
   url: http://localhost:8081/api/rest/v1
   eventPath: /event
+
 database:
   type: MONGO
 # type: SQL
 
 broadcaster:
   type: HTTP
-    contracteventsurl: http://localhost:3000
   cache:
     expirationMillis: 6000000
   event:
@@ -87,7 +87,8 @@ broadcaster:
   multiInstance: false
   bytesToAscii: false
 
-
+broadcaster_http:
+  contracteventsurl: http://localhost:3000
 
 # For Kafka
 zookeeper:

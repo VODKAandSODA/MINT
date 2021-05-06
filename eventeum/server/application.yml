@@ -76,7 +76,7 @@ database:
 
 broadcaster:
   type: HTTP
-    contracteventsurl: http://localhost
+    contracteventsurl: http://localhost:3000
   cache:
     expirationMillis: 6000000
   event:

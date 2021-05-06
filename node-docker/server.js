@@ -1,18 +1,3 @@
-
-/*
-const express = require('express')
-const app = express()
-const port = 3000
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(Example app listening at http://localhost:${port})
-})
-*/
-
 'use strict'
 
 const express = require('express')
@@ -22,13 +7,13 @@ const app = express()
 
 
 // Tell express to use the body-parser middleware and to not parse extended bodies
-app.use(bodyParser.urlencoded({ extended: false }))
+//app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json({extended : true}));
+
 
 // Route that receives a POST request to /sms
 // app.post('/sms', function (req, res) {
-
 app.post('/', function (req, res) {
-  res.send('Hello World!')
   const body = req.body.Body
   res.set('Content-Type', 'text/plain')
   res.send(`You sent: ${body} to Express`)

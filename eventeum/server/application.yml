@@ -26,18 +26,15 @@ ethereum:
 
 
 eventFilters:
-  - id: Mint
+  - id: mint
     contractAddress: ${CONTRACT_ADDRESS:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
     eventSpecification:
-      eventName: Mint
+      eventName: mint
       indexedParameterDefinitions:
         - position: 0
           type: ADDRESS
         - position: 1
           type: UINT256
-    correlationId:
-      type: NON_INDEXED_PARAMETER
-      index: 0
 
 
 eventFilters:

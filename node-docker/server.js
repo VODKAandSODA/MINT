@@ -5,13 +5,12 @@ const port = 3000
 const bodyParser = require('body-parser')
 const app = express()
 
-console.log(app)
+
 
 
 // Tell express to use the body-parser middleware and to not parse extended bodies
 // app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json({extended : true}));
-
+//app.use(bodyParser.json({extended : true}));
 
 
 // Route that receives a POST

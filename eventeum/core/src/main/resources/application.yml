@@ -16,11 +16,14 @@ logging:
 ethereum:
   nodes:
     - name: default
-      url: http://localhost:8545
+      url: https://data-seed-prebsc-1-s1.binance.org:8545
       pollingInterval: ${POLLING_INTERVAL:10000}
 
   healthcheck:
     pollInterval: 2000
+
+#url: http://localhost:8545
+
 
 #eventFilters:
 #  - id: RequestCreated

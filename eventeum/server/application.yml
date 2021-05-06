@@ -16,31 +16,33 @@ logging:
 ethereum:
   nodes:
     - name: default
-      url: http://localhost:8545
+      url: https://data-seed-prebsc-1-s1.binance.org:8545/
       pollingInterval: ${POLLING_INTERVAL:10000}
+
+#url: http://localhost:8545
 
   healthcheck:
     pollInterval: 2000
 
 
-#    eventFilters:
-#      - id: Mint
-#        contractAddress: ${CONTRACT_ADDRESS}
-#        eventSpecification:
-#      eventName: Mint
-#        indexedParameterDefinitions:
-#            - position: 0
-#              type: ADDRESS
-#            - position: 1
-#              type: UINT256
-#        correlationId:
-#          type: NON_INDEXED_PARAMETER
-#          index: 0
+eventFilters:
+  - id: Mint
+    contractAddress: ${CONTRACT_ADDRESS:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
+    eventSpecification:
+      eventName: Mint
+      indexedParameterDefinitions:
+        - position: 0
+          type: ADDRESS
+        - position: 1
+          type: UINT256
+    correlationId:
+      type: NON_INDEXED_PARAMETER
+      index: 0
 
 
 eventFilters:
   - id: RequestCreated
-    contractAddress: ${CONTRACT_ADDRESS:0x4aecf261541f168bb3ca65fa8ff5012498aac3b8}
+    contractAddress: ${CONTRACT_ADDRESS:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
     eventSpecification:
       eventName: RequestCreated
       indexedParameterDefinitions:
@@ -58,11 +60,11 @@ eventFilters:
 #transactionFilters:
 #- nodeName: ${ETHEREUM_NETWORK:default}
 #  type: "FROM_ADDRESS"
-#  transactionIdentifierValue: ${CONTRACT_ADDRESS_EM_TOKEN:0x0f8E7A681019Ec13EfE853a6Eca666E05b214Fd5}
+#  transactionIdentifierValue: ${CONTRACT_ADDRESS_EM_TOKEN:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
 #  statuses: ['CONFIRMED']
 #- nodeName: ${ETHEREUM_NETWORK:default}
 #  type: "TO_ADDRESS"
-#  transactionIdentifierValue: ${CONTRACT_ADDRESS_EM_TOKEN:0xfBAB8dE62002c86986C6e070BD3bB46BF983C74e}
+#  transactionIdentifierValue: ${CONTRACT_ADDRESS_EM_TOKEN:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
 #  statuses: ['FAILED']
 
 
@@ -88,7 +90,7 @@ broadcaster:
   bytesToAscii: false
 
 broadcaster_http:
-  contracteventsurl: http://localhost:3000
+  contracteventsurl: http://host.docker.internal:3000
 
 # For Kafka
 zookeeper:

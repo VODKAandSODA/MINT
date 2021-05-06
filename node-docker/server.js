@@ -10,7 +10,7 @@ const app = express()
 
 // Tell express to use the body-parser middleware and to not parse extended bodies
 // app.use(bodyParser.urlencoded({ extended: false }))
-//app.use(bodyParser.json({extended : true}));
+app.use(bodyParser.json({extended : true}));
 
 
 // Route that receives a POST

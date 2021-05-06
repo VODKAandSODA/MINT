@@ -75,7 +75,8 @@ database:
 # type: SQL
 
 broadcaster:
-  type: KAFKA
+  type: HTTP
+    contracteventsurl: http://localhost
   cache:
     expirationMillis: 6000000
   event:
@@ -85,6 +86,8 @@ broadcaster:
       numBlocksToWaitBeforeInvalidating: 2
   multiInstance: false
   bytesToAscii: false
+
+
 
 # For Kafka
 zookeeper:

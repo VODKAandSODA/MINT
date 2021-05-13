@@ -65,10 +65,14 @@ eventFilters:
 #  statuses: ['FAILED']
 
 
+#  url: http://localhost:8081/api/rest/v1
 eventStore:
   type: DB
-  url: http://localhost:8081/api/rest/v1
+  url: http://host.docker.internal:8081/api/rest/v1
   eventPath: /event
+
+
+
 
 database:
   type: MONGO

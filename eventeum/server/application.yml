@@ -26,7 +26,7 @@ ethereum:
 
 eventFilters:
   - id: Mint
-    contractAddress: 0xd31dd5ac96c39ad0d938d9589776e6940919d714
+    contractAddress: 0x84b8a18042f903b0516d18248c93e6a691f55a6f
     eventSpecification:
       eventName: Mint
       indexedParameterDefinitions:
@@ -44,7 +44,7 @@ eventFilters:
 
 # eventFilters:
 #   - id: RequestCreated
-#     contractAddress: ${CONTRACT_ADDRESS:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
+#     contractAddress: ${CONTRACT_ADDRESS:0x84b8a18042f903b0516d18248c93e6a691f55a6f}
 #     eventSpecification:
 #       eventName: RequestCreated
 #       indexedParameterDefinitions:
@@ -62,11 +62,11 @@ eventFilters:
 #transactionFilters:
 #- nodeName: ${ETHEREUM_NETWORK:default}
 #  type: "FROM_ADDRESS"
-#  transactionIdentifierValue: ${CONTRACT_ADDRESS_EM_TOKEN:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
+#  transactionIdentifierValue: ${CONTRACT_ADDRESS_EM_TOKEN:0x84b8a18042f903b0516d18248c93e6a691f55a6f}
 #  statuses: ['CONFIRMED']
 #- nodeName: ${ETHEREUM_NETWORK:default}
 #  type: "TO_ADDRESS"
-#  transactionIdentifierValue: ${CONTRACT_ADDRESS_EM_TOKEN:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
+#  transactionIdentifierValue: ${CONTRACT_ADDRESS_EM_TOKEN:0x84b8a18042f903b0516d18248c93e6a691f55a6f}
 #  statuses: ['FAILED']
 
 

@@ -24,35 +24,40 @@ ethereum:
   healthcheck:
     pollInterval: 2000
 
-
 eventFilters:
-  - id: mint
-    contractAddress: ${CONTRACT_ADDRESS:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
+  - id: Mint
+    contractAddress: 0xd31dd5ac96c39ad0d938d9589776e6940919d714
     eventSpecification:
-      eventName: mint
+      eventName: Mint
       indexedParameterDefinitions:
         - position: 0
           type: ADDRESS
         - position: 1
           type: UINT256
-
-
-eventFilters:
-  - id: RequestCreated
-    contractAddress: ${CONTRACT_ADDRESS:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
-    eventSpecification:
-      eventName: RequestCreated
-      indexedParameterDefinitions:
-        - position: 0
-          type: BYTES32
-       - position: 1
-          type: ADDRESS
       nonIndexedParameterDefinitions:
         - position: 2
-          type: BYTES32
+          type: UINT256
     correlationId:
       type: NON_INDEXED_PARAMETER
       index: 0
+
+
+# eventFilters:
+#   - id: RequestCreated
+#     contractAddress: ${CONTRACT_ADDRESS:0xd31dd5ac96c39ad0d938d9589776e6940919d714}
+#     eventSpecification:
+#       eventName: RequestCreated
+#       indexedParameterDefinitions:
+#         - position: 0
+#           type: BYTES32
+#        - position: 1
+#           type: ADDRESS
+#       nonIndexedParameterDefinitions:
+#         - position: 2
+#           type: BYTES32
+#     correlationId:
+#       type: NON_INDEXED_PARAMETER
+#       index: 0
 
 #transactionFilters:
 #- nodeName: ${ETHEREUM_NETWORK:default}
@@ -90,32 +95,30 @@ broadcaster:
   multiInstance: false
   bytesToAscii: false
 
-broadcaster_http:
-  contracteventsurl: http://host.docker.internal:3000
 
 # For Kafka
-zookeeper:
-  address: ${ZOOKEEPER_ADDRESS:localhost:2181}
-kafka:
-  bootstrap:
-    addresses: ${KAFKA_ADDRESSES:localhost:9092}
-  topic:
-    contractEvents: contract-events
-    blockEvents: block-events
-    eventeumEvents: eventeum-events
-  request:
-    timeout:
-      msConfig: ${KAFKA_REQUEST_TIMEOUT_MS:20000}
-  retry:
-    backoff:
-      msConfig: ${KAFKA_RETRY_BACKOFF_MS:500}
-  endpoint:
-    identification:
-      algorithm: ${KAFKA_ENDPOINT_IDENTIFICATION_ALGORITHM:null}
-  sasl:
-    mechanism: ${KAFKA_SASL_MECHANISM:PLAIN}
-    username: ${KAFKA_USERNAME:""}
-    password: ${KAFKA_PASSWORD:""}
-  security:
-    protocol: ${KAFKA_SECURITY_PROTOCOL:PLAINTEXT}
-  retries: ${KAFKA_RETRIES:10}
+# zookeeper:
+#   address: ${ZOOKEEPER_ADDRESS:localhost:2181}
+# kafka:
+#   bootstrap:
+#     addresses: ${KAFKA_ADDRESSES:localhost:9092}
+#   topic:
+#     contractEvents: contract-events
+#     blockEvents: block-events
+#     eventeumEvents: eventeum-events
+#   request:
+#     timeout:
+#       msConfig: ${KAFKA_REQUEST_TIMEOUT_MS:20000}
+#   retry:
+#     backoff:
+#       msConfig: ${KAFKA_RETRY_BACKOFF_MS:500}
+#   endpoint:
+#     identification:
+#       algorithm: ${KAFKA_ENDPOINT_IDENTIFICATION_ALGORITHM:null}
+#   sasl:
+#     mechanism: ${KAFKA_SASL_MECHANISM:PLAIN}
+#     username: ${KAFKA_USERNAME:""}
+#     password: ${KAFKA_PASSWORD:""}
+#   security:
+#     protocol: ${KAFKA_SECURITY_PROTOCOL:PLAINTEXT}
+#   retries: ${KAFKA_RETRIES:10}

@@ -4,15 +4,17 @@ services:
   eventeum:
     image: eventeum/eventeum:latest
     volumes:
-       - ./application.yml:/eventeum/core/src/main/resources/application.yml
+       - ./application.yml:/eventeum/application.yml
     ports:
     - "8060:8060"
     depends_on:
       - mongodb
+      #- kafka
     environment:
       SPRING_DATA_MONGODB_HOST: mongodb
       ETHEREUM_NODE_URL: https://data-seed-prebsc-1-s1.binance.org:8545
       ZOOKEEPER_ADDRESS: zookeeper:2181
+      CONF: /eventeum/application.yml
       # KAFKA_ADDRESSES: kafka:19092
       BROADCASTER_TYPE: HTTP
       BROADCASTER_HTTP_CONTRACTEVENTSURL: http://host.docker.internal:3000

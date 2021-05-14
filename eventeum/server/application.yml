@@ -24,22 +24,22 @@ ethereum:
   healthcheck:
     pollInterval: 2000
 
-eventFilters:
-  - id: Mint
-    contractAddress: 0x84b8a18042f903b0516d18248c93e6a691f55a6f
-    eventSpecification:
-      eventName: Mint
-      indexedParameterDefinitions:
-        - position: 0
-          type: ADDRESS
-        - position: 1
-          type: UINT256
-      nonIndexedParameterDefinitions:
-        - position: 2
-          type: UINT256
-    correlationId:
-      type: NON_INDEXED_PARAMETER
-      index: 0
+#eventFilters:
+#  - id: Mint
+#    contractAddress: 0x84b8a18042f903b0516d18248c93e6a691f55a6f
+#    eventSpecification:
+#      eventName: Mint
+#      indexedParameterDefinitions:
+#        - position: 0
+#          type: ADDRESS
+#        - position: 1
+#          type: UINT256
+#      nonIndexedParameterDefinitions:
+#        - position: 2
+#          type: UINT256
+#    correlationId:
+#      type: NON_INDEXED_PARAMETER
+#      index: 0
 
 eventFilters:
   - id: Transfer
@@ -57,24 +57,6 @@ eventFilters:
     correlationId:
       type: NON_INDEXED_PARAMETER
       index: 0
-
-eventFilters:
-  - id: _mint
-    contractAddress: 0x84b8a18042f903b0516d18248c93e6a691f55a6f
-    eventSpecification:
-      eventName: _mint
-      indexedParameterDefinitions:
-        - position: 0
-          type: ADDRESS
-        - position: 1
-          type: UINT256
-      nonIndexedParameterDefinitions:
-        - position: 2
-          type: UINT256
-    correlationId:
-      type: NON_INDEXED_PARAMETER
-      index: 0
-
 
 
 # eventFilters:
